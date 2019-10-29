@@ -7,3 +7,6 @@ Backgroundsubtractor blocks:
   * opencv_mog
   * opencv_mog2
   
+links:
+
+https://github.com/murari023/awesome-background-subtraction
