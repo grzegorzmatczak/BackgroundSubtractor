@@ -1,7 +1,6 @@
 #ifndef BASE_SUBTRACTOR_H
 #define BASE_SUBTRACTOR_H
 
-#include "../../../block/src/block.h"
 #include <QDateTime>
 #include "opencv2/bgsegm.hpp"
 #include "opencv2/core.hpp"
