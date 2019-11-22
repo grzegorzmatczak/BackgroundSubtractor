@@ -26,13 +26,13 @@ void BackgroundSubtractor::configure(QJsonObject const &a_config)
 
   switch (NAME_SID)
   {
-    case SID("OpenCV_GSOC"): m_subtractor = { new Subtractor::GSOC{ a_config} }; break;
-    case SID("OpenCV_KNN"): m_subtractor = { new Subtractor::KNN{ a_config} }; break;
-    case SID("OpenCV_MOG"): m_subtractor = { new Subtractor::MOG{ a_config} }; break;
-    case SID("OpenCV_MOG2"): m_subtractor = { new Subtractor::MOG2{ a_config} }; break;
-    case SID("OpenCV_GMG"): m_subtractor = { new Subtractor::GMG{ a_config} }; break;
-    case SID("OpenCV_CNT"): m_subtractor = { new Subtractor::CNT{ a_config} }; break;
-    case SID("OpenCV_LSBP"): m_subtractor = { new Subtractor::LSBP{ a_config} }; break;
+    case SID("GSOC"): m_subtractor = { new Subtractor::GSOC{ a_config} }; break;
+    case SID("KNN"): m_subtractor = { new Subtractor::KNN{ a_config} }; break;
+    case SID("MOG"): m_subtractor = { new Subtractor::MOG{ a_config} }; break;
+    case SID("MOG2"): m_subtractor = { new Subtractor::MOG2{ a_config} }; break;
+    case SID("GMG"): m_subtractor = { new Subtractor::GMG{ a_config} }; break;
+    case SID("CNT"): m_subtractor = { new Subtractor::CNT{ a_config} }; break;
+    case SID("LSBP"): m_subtractor = { new Subtractor::LSBP{ a_config} }; break;
     case SID("None"): m_subtractor = { new Subtractor::None{ a_config} }; break;
     default: H_Logger->error("Unsupported filter type: {}", NAME_STRING); break;
   }
