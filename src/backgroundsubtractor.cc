@@ -18,7 +18,7 @@ BackgroundSubtractor::~BackgroundSubtractor()
 
 void BackgroundSubtractor::configure(QJsonObject const &a_config)
 {
-  delete m_subtractor;
+  //delete m_subtractor;
   m_timer.reset();
 
   auto const NAME_STRING{ a_config[FILTER_NAME].toString().toStdString() };
