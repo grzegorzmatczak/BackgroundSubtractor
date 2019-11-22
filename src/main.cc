@@ -1,4 +1,7 @@
-#include <backgroundsubtractor.h>
+#include "../../IncludeSpdlog/spdlog.h"
+
+#include "backgroundsubtractor.h"
+
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -58,13 +61,13 @@ int main() {
   QJsonArray filters{filterConfig8};
   QJsonArray filters2{filterConfig9};
   qDebug() << "filters" << filters;
-  BackgroundSubtractor multiImageFilter{filters};
-  BackgroundSubtractor multiImageFilter2{filters2};
+  BackgroundSubtractor multiImageFilter{filterConfig7};
+  BackgroundSubtractor multiImageFilter2{filterConfig7};
 
   cv::VideoCapture cap;
   // cap.open(0);
-  cap.open("/media/data/raw_video/1.avi");
-  // cap.open("/home/gmatczak/tmp/000001%04d.png");
+  cap.open("/home/gmatczak/1.mp4");
+
   if (!cap.isOpened()) {
     return -1;
   }

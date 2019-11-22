@@ -1,16 +1,13 @@
-#include "../../BackgroundSubtractor/include/backgroundsubtractor.h"
-#include "../../IncludeSpdlog/spdlog.h"
-#include <QDebug>
-#include <QJsonArray>
-#include <QJsonObject>
-#include <QMap>
-#include <QTimer>
+#include "backgroundsubtractor.h"
+
+
 #include "subtractor.h"
 
 constexpr auto FILTER_NAME{ "Name" };
 
 BackgroundSubtractor::BackgroundSubtractor(QJsonObject const &a_config)
 {
+  m_subtractor = new Subtractor::None{a_config};
   configure(a_config);
 }
 
