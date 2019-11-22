@@ -4,7 +4,7 @@
 #include <opencv2/imgproc.hpp>
 
 class BaseSubtractor;
-class QJsonArray;
+class QJsonObject;
 namespace cv
 {
 class Mat;
@@ -14,10 +14,10 @@ class TickMeter;
 class BackgroundSubtractor
 {
  public:
-  BackgroundSubtractor(QJsonArray const &a_subtractorConfiguration);
+  BackgroundSubtractor(QJsonObject const &a_config);
   ~BackgroundSubtractor();
 
-  void configure(QJsonArray const &a_subtractorConfiguration);
+  void configure(QJsonObject const &a_config);
   cv::Mat process(cv::Mat &a_image);
   double getElapsedTimeSubtractor();
 
