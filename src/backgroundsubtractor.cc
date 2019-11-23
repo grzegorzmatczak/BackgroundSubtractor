@@ -1,5 +1,5 @@
-#include "../../backgroundsubtractor/include/backgroundsubtractor.h"
-#include "../../includeSpdlog/include/includeSpdlog.h"
+#include "../../BackgroundSubtractor/include/backgroundsubtractor.h"
+#include "../../IncludeSpdlog/spdlog.h"
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -38,8 +38,6 @@ void BackgroundSubtractor::configure(QJsonArray const &a_subtractorConfiguration
       case SID("OpenCV_GMG"): m_subtractor = { new Subtractor::GMG{ SUBTRACTOR_CONFIG.toObject() } }; break;
       case SID("OpenCV_CNT"): m_subtractor = { new Subtractor::CNT{ SUBTRACTOR_CONFIG.toObject() } }; break;
       case SID("OpenCV_LSBP"): m_subtractor = { new Subtractor::LSBP{ SUBTRACTOR_CONFIG.toObject() } }; break;
-      case SID("User_Median"): m_subtractor = { new Subtractor::Median{ SUBTRACTOR_CONFIG.toObject() } }; break;
-      case SID("User_Median_V2"): m_subtractor = { new Subtractor::Median{ SUBTRACTOR_CONFIG.toObject() } }; break;
       case SID("None"): m_subtractor = { new Subtractor::None{ SUBTRACTOR_CONFIG.toObject() } }; break;
       default: H_Logger->error("Unsupported filter type: {}", NAME_STRING); break;
     }

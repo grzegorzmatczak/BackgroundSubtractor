@@ -15,7 +15,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${FLAGS_COMMON}")
 set(CMAKE_AUTOMOC ON)
 find_package(Qt5Core REQUIRED)
 find_package(OpenCV REQUIRED)
-find_package(Block REQUIRED)
 #include fix for OpenCV
 include_directories(
     ${OpenCV_INCLUDE_DIRS}
@@ -47,14 +46,6 @@ set(SRC
     src/subtractors/opencv_lsbp.h
     src/subtractors/opencv_mog.cc
     src/subtractors/opencv_mog.h
-    src/subtractors/user_median.cc
-    src/subtractors/user_median.h
-    src/subtractors/user_median_implementation.cc
-    src/subtractors/user_median_implementation.h
-    src/subtractors/user_median_v2.cc
-    src/subtractors/user_median_v2.h
-    src/subtractors/user_median_v2_implementation.cc
-    src/subtractors/user_median_v2_implementation.h
     src/subtractors/user_none.cc
     src/subtractors/user_none.h
 )
@@ -79,7 +70,6 @@ target_link_libraries(${PROJECT_NAME}
     opencv_core
     opencv_imgcodecs
     opencv_bgsegm
-    Block
 )
 
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
