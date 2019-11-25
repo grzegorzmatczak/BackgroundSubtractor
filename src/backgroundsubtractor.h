@@ -1,7 +1,7 @@
 #ifndef BACKGROUND_SUBTRACTOR_H
 #define BACKGROUND_SUBTRACTOR_H
 
-#include "../../../IncludeSpdlog/spdlog.h"
+#include "../../IncludeSpdlog/spdlog.h"
 
 #include <opencv2/imgproc.hpp>
 
