@@ -8,7 +8,7 @@ constexpr auto FILTER_NAME{ "Name" };
 BackgroundSubtractor::BackgroundSubtractor(QJsonObject const &a_config)
 {
   m_subtractor = new Subtractor::None();
-  configure(a_config);
+  //configure(a_config);
 }
 
 BackgroundSubtractor::~BackgroundSubtractor()
