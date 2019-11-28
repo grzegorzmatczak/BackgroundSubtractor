@@ -2,7 +2,7 @@
 //#include <opencv2/tracking/tracker.hpp>
 #include <QJsonObject>
 
-Subtractor::None::None(QJsonObject const &a_config) {}
+Subtractor::None::None() {}
 
 cv::Mat Subtractor::None::process(cv::Mat &a_src)
 {

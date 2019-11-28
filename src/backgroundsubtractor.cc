@@ -7,7 +7,7 @@ constexpr auto FILTER_NAME{ "Name" };
 
 BackgroundSubtractor::BackgroundSubtractor(QJsonObject const &a_config)
 {
-  m_subtractor = new Subtractor::None{a_config};
+  m_subtractor = new Subtractor::None();
   configure(a_config);
 }
 
@@ -33,8 +33,8 @@ void BackgroundSubtractor::configure(QJsonObject const &a_config)
     case SID("GMG"): m_subtractor = { new Subtractor::GMG{ a_config} }; break;
     case SID("CNT"): m_subtractor = { new Subtractor::CNT{ a_config} }; break;
     case SID("LSBP"): m_subtractor = { new Subtractor::LSBP{ a_config} }; break;
-    case SID("None"): m_subtractor = { new Subtractor::None{ a_config} }; break;
-    default: H_Logger->error("Unsupported filter type: {}", NAME_STRING); break;
+    case SID("None"): m_subtractor = { new Subtractor::None() }; break;
+    default: H_Logger->error("Unsupported subtractor type: {}", NAME_STRING); break;
   }
 }
 

@@ -11,7 +11,7 @@ namespace Subtractor
 class None : public BaseSubtractor
 {
  public:
-  None(QJsonObject const &a_config);
+  None();
   cv::Mat process(cv::Mat &a_src);
 
  private:
