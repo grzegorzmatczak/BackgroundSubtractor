@@ -33,6 +33,7 @@ void BackgroundSubtractor::configure(QJsonObject const &a_config)
     case SID("CNT"): m_subtractor = { new Subtractor::CNT{ a_config} }; break;
     case SID("LSBP"): m_subtractor = { new Subtractor::LSBP{ a_config} }; break;
     case SID("None"): m_subtractor = { new Subtractor::None() }; break;
+    case SID("Median"): m_subtractor = { new Subtractor::Median(a_config) }; break;
     default: H_Logger->error("Unsupported subtractor type: {}", NAME_STRING); break;
   }
 }
