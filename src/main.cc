@@ -1,4 +1,4 @@
-#include "../../IncludeSpdlog/spdlog.h"
+#include "../../../IncludeSpdlog/spdlog.h"
 
 #include "backgroundsubtractor.h"
 
@@ -37,10 +37,22 @@ int main() {
       {"NumberOfSamples", 20},   {"ReplaceRate", 0.003},
       {"PropagationRate", 0.01}, {"HitsThreshold", 32}};
 
-  QJsonObject filterConfig6{{"Name", "OpenCV_LSBP"},
-                            {"CameraMotionCompensation", 0},
-                            {"NumberOfSamples", 20},
-                            {"LSBPRadius", 16}};
+  QJsonObject filterConfig6{
+    {"Name", "OpenCV_LSBP"},
+    {"CameraMotionCompensation", 0},
+    {"NumberOfSamples", 20},
+    {"LSBPRadius", 16},
+    {"LSBP_Tlower", 2.0},
+    {"LSBP_Tupper", 32.0},
+    {"LSBP_Tincrease", 1.0},
+    {"LSBP_Tdecrease", 0.05},
+    {"LSBP_Rscale", 10.0},
+    {"LSBP_Rincrease", 0.005},
+    {"LSBP_NoiseBG", 0.0004},
+    {"LSBP_NoiseFG", 0.0008},
+    {"LSBP_BinaryThreshold", 8},
+    {"LSBP_minMatchesNumber", 2}
+    };
 
   QJsonObject filterConfig7{{"Name", "OpenCV_MOG"},
                             {"History", 200},
@@ -60,9 +72,9 @@ int main() {
 
   QJsonArray filters{filterConfig8};
   QJsonArray filters2{filterConfig9};
-  qDebug() << "filters" << filters;
-  BackgroundSubtractor multiImageFilter{filterConfig7};
-  BackgroundSubtractor multiImageFilter2{filterConfig7};
+  qDebug() << "filterConfig6" << filterConfig6;
+  BackgroundSubtractor multiImageFilter{filterConfig6};
+  BackgroundSubtractor multiImageFilter2{filterConfig6};
 
   cv::VideoCapture cap;
   // cap.open(0);
@@ -88,8 +100,8 @@ int main() {
     floatqDebug() << "i:" << i << endl;
     cv::imshow("Before", frame);
     cv::imshow("After", bg);
-    cv::imshow("After2", bg2);
-    cv::waitKey(10);
+    //cv::imshow("After2", bg2);
+    cv::waitKey(1000);
   }
 
   double elapsedTime1 = multiImageFilter.getElapsedTimeSubtractor();

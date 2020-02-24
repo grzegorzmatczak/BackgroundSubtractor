@@ -46,6 +46,10 @@ set(SRC
     src/subtractors/opencv_mog.h
     src/subtractors/user_none.cc
     src/subtractors/user_none.h
+    src/subtractors/user_median.cc
+    src/subtractors/user_median.h
+    src/subtractors/user_median_implementation.cc
+    src/subtractors/user_median_implementation.h
 )
 
 set(HEADERS
