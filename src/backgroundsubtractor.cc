@@ -23,6 +23,7 @@ void BackgroundSubtractor::configure(QJsonObject const &a_config)
   auto const NAME_STRING{ a_config[FILTER_NAME].toString().toStdString() };
   auto const NAME_SID{ SID(NAME_STRING.c_str()) };
 
+  
   switch (NAME_SID)
   {
     case SID("GSOC"): m_subtractor = { new Subtractor::GSOC{ a_config} }; break;

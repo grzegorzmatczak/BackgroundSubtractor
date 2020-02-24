@@ -3,17 +3,17 @@
 
 constexpr auto CAMERA_MOTION_COMPENSATION{ "CameraMotionCompensation" };
 constexpr auto NUMBER_OF_SAMPLES{ "NumberOfSamples" };
-constexpr auto LSBP_RADIUS{ "LSBPRadius" };
-constexpr auto LSBP_T_LOWER{ "LSBP_Tlower" };
-constexpr auto LSBP_T_UPPER{ "LSBP_Tupper" };
-constexpr auto LSBP_T_INCREASE{ "LSBP_Tincrease" };
-constexpr auto LSBP_T_DECREASE{ "LSBP_Tdecrease" };
-constexpr auto LSBP_R_SCALE{ "LSBP_Rscale" };
-constexpr auto LSBP_R_INCREASE{ "LSBP_Rincrease" };
-constexpr auto LSBP_NOISE_BG{ "LSBP_NoiseBG" };
-constexpr auto LSBP_NOISE_FG{ "LSBP_NoiseFG" };
-constexpr auto LSBP_BINARY_THRESHOLD{ "LSBP_BinaryThreshold" };
-constexpr auto LSBP_MIN_MATCHES_NUMBER{ "LSBP_minMatchesNumber" };
+constexpr auto LSBP_RADIUS{ "Radius" };
+constexpr auto LSBP_T_LOWER{ "Tlower" };
+constexpr auto LSBP_T_UPPER{ "Tupper" };
+constexpr auto LSBP_T_INCREASE{ "Tincrease" };
+constexpr auto LSBP_T_DECREASE{ "Tdecrease" };
+constexpr auto LSBP_R_SCALE{ "Rscale" };
+constexpr auto LSBP_R_INCREASE{ "Rincrease" };
+constexpr auto LSBP_NOISE_BG{ "NoiseBG" };
+constexpr auto LSBP_NOISE_FG{ "NoiseFG" };
+constexpr auto LSBP_BINARY_THRESHOLD{ "BinaryThreshold" };
+constexpr auto LSBP_MIN_MATCHES_NUMBER{ "MinMatchesNumber" };
 
 Subtractor::LSBP::LSBP(QJsonObject const &a_config)
   : m_cameraMotionCompensation{ a_config[CAMERA_MOTION_COMPENSATION].toInt() }
@@ -30,6 +30,8 @@ Subtractor::LSBP::LSBP(QJsonObject const &a_config)
   , m_LSBP_BinaryThreshold{ a_config[LSBP_BINARY_THRESHOLD].toInt() }
   , m_LSBP_minMatchesNumber{ a_config[LSBP_MIN_MATCHES_NUMBER].toInt() }
 {
+
+
   m_backgroundSubtractor =
       cv::bgsegm::createBackgroundSubtractorLSBP(
         m_cameraMotionCompensation, 
