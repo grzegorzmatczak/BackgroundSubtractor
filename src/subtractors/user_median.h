@@ -2,6 +2,7 @@
 #define MEDIAN_H
 
 #include <opencv2/bgsegm.hpp>
+
 #include "basesubtractor.h"
 #include "user_median_implementation.h"
 

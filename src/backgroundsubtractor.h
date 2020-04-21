@@ -1,15 +1,15 @@
 #ifndef BACKGROUND_SUBTRACTOR_H
 #define BACKGROUND_SUBTRACTOR_H
 
-#include "../../../IncludeSpdlog/spdlog.h"
-
-#include <opencv2/imgproc.hpp>
-
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QMap>
 #include <QTimer>
+
+#include <opencv2/imgproc.hpp>
+
+#include "../../../IncludeSpdlog/spdlog.h"
 
 class BaseSubtractor;
 class QJsonObject;

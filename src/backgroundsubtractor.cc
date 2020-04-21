@@ -1,6 +1,5 @@
 #include "backgroundsubtractor.h"
 
-
 #include "subtractor.h"
 
 constexpr auto FILTER_NAME{ "Name" };
@@ -23,16 +22,15 @@ void BackgroundSubtractor::configure(QJsonObject const &a_config)
   auto const NAME_STRING{ a_config[FILTER_NAME].toString().toStdString() };
   auto const NAME_SID{ SID(NAME_STRING.c_str()) };
 
-  
   switch (NAME_SID)
   {
-    case SID("GSOC"): m_subtractor = { new Subtractor::GSOC{ a_config} }; break;
-    case SID("KNN"): m_subtractor = { new Subtractor::KNN{ a_config} }; break;
-    case SID("MOG"): m_subtractor = { new Subtractor::MOG{ a_config} }; break;
-    case SID("MOG2"): m_subtractor = { new Subtractor::MOG2{ a_config} }; break;
-    case SID("GMG"): m_subtractor = { new Subtractor::GMG{ a_config} }; break;
-    case SID("CNT"): m_subtractor = { new Subtractor::CNT{ a_config} }; break;
-    case SID("LSBP"): m_subtractor = { new Subtractor::LSBP{ a_config} }; break;
+    case SID("GSOC"): m_subtractor = { new Subtractor::GSOC{ a_config } }; break;
+    case SID("KNN"): m_subtractor = { new Subtractor::KNN{ a_config } }; break;
+    case SID("MOG"): m_subtractor = { new Subtractor::MOG{ a_config } }; break;
+    case SID("MOG2"): m_subtractor = { new Subtractor::MOG2{ a_config } }; break;
+    case SID("GMG"): m_subtractor = { new Subtractor::GMG{ a_config } }; break;
+    case SID("CNT"): m_subtractor = { new Subtractor::CNT{ a_config } }; break;
+    case SID("LSBP"): m_subtractor = { new Subtractor::LSBP{ a_config } }; break;
     case SID("None"): m_subtractor = { new Subtractor::None() }; break;
     case SID("Median"): m_subtractor = { new Subtractor::Median(a_config) }; break;
     default: H_Logger->error("Unsupported subtractor type: {}", NAME_STRING); break;

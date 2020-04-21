@@ -2,7 +2,9 @@
 #define OPENCV_CNT_H
 
 #include <opencv2/bgsegm.hpp>
+
 #include "basesubtractor.h"
+
 class QJsonObject;
 
 namespace Subtractor

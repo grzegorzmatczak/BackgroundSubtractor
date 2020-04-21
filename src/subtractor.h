@@ -8,6 +8,6 @@
 #include "subtractors/opencv_lsbp.h"
 #include "subtractors/opencv_mog.h"
 #include "subtractors/opencv_mog2.h"
-#include "subtractors/user_none.h"
 #include "subtractors/user_median.h"
-#endif  // SUBTRACTOR_H
+#include "subtractors/user_none.h"
+#endif // SUBTRACTOR_H

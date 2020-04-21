@@ -2,6 +2,7 @@
 #define OPENCV_MOG_H
 
 #include <opencv2/bgsegm.hpp>
+
 #include "basesubtractor.h"
 
 class QJsonObject;

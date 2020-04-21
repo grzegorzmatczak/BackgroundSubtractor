@@ -11,7 +11,6 @@ Subtractor::CNT::CNT(QJsonObject const &a_config)
   , m_maxPixelStability{ a_config[MAX_PIXEL_STABILITY].toInt() }
   , m_isParallel{ a_config[IS_PARALLEL].toBool() }
   , m_useHistory{ a_config[USE_HISTORY].toBool() }
-
 {
   m_backgroundSubtractor =
       cv::bgsegm::createBackgroundSubtractorCNT(m_minPixelStability, m_useHistory, m_maxPixelStability, m_isParallel);

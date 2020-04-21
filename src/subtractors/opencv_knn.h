@@ -2,6 +2,7 @@
 #define OPENCV_KNN_H
 
 #include <opencv2/video.hpp>
+
 #include "basesubtractor.h"
 
 class QJsonObject;

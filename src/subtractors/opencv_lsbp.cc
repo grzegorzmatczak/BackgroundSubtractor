@@ -30,24 +30,10 @@ Subtractor::LSBP::LSBP(QJsonObject const &a_config)
   , m_LSBP_BinaryThreshold{ a_config[LSBP_BINARY_THRESHOLD].toInt() }
   , m_LSBP_minMatchesNumber{ a_config[LSBP_MIN_MATCHES_NUMBER].toInt() }
 {
-
-
-  m_backgroundSubtractor =
-      cv::bgsegm::createBackgroundSubtractorLSBP(
-        m_cameraMotionCompensation, 
-        m_numberOfSamples, 
-        m_LSBPRadius,
-        m_LSBP_Tlower,
-        m_LSBP_Tupper,
-        m_LSBP_Tincrease,
-        m_LSBP_Tdecrease,
-        m_LSBP_Rscale,
-        m_LSBP_Rincrease,
-        m_LSBP_NoiseBG,
-        m_LSBP_NoiseFG,
-        m_LSBP_BinaryThreshold,
-        m_LSBP_minMatchesNumber
-        );
+  m_backgroundSubtractor = cv::bgsegm::createBackgroundSubtractorLSBP(
+      m_cameraMotionCompensation, m_numberOfSamples, m_LSBPRadius, m_LSBP_Tlower, m_LSBP_Tupper, m_LSBP_Tincrease,
+      m_LSBP_Tdecrease, m_LSBP_Rscale, m_LSBP_Rincrease, m_LSBP_NoiseBG, m_LSBP_NoiseFG, m_LSBP_BinaryThreshold,
+      m_LSBP_minMatchesNumber);
 }
 
 cv::Mat Subtractor::LSBP::process(cv::Mat &a_src)

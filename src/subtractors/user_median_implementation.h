@@ -4,12 +4,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
-#include <opencv2/opencv.hpp>
 #include <vector>
-#include "basesubtractor.h"
-#include "omp.h"
+
+#include <opencv2/opencv.hpp>
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
+
+#include "basesubtractor.h"
+#include "omp.h"
 
 using namespace std;
 
@@ -50,13 +52,3 @@ class imgMedian
 } // namespace Subtractor
 
 #endif /* MEDIAN_IMPLEMENTATION_H */
-
-
-
-
-
-
-
-
-
-

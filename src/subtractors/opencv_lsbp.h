@@ -2,6 +2,7 @@
 #define OPENCV_LSBP_H
 
 #include <opencv2/bgsegm.hpp>
+
 #include "basesubtractor.h"
 
 class QJsonObject;
@@ -30,7 +31,6 @@ class LSBP : public BaseSubtractor
   double m_LSBP_NoiseFG;
   int m_LSBP_BinaryThreshold;
   int m_LSBP_minMatchesNumber;
-
 };
 } // namespace Subtractor
 
